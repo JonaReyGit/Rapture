@@ -13,7 +13,8 @@ public class ThirdPersonCamera : MonoBehaviour
     public float followSmoothTime = 0.15f;
     public float rotationSmoothSpeed = 8f;
     public bool lookAtTarget = true;
-    public Vector3 lookAtOffset = new Vector3(0f, 1.5f, 0f); // aim roughly at chest/head height
+    [Range(0f, 45f)]
+    public float pitchAngle = 15f; // extra downward tilt, on top of the player's facing
 
     private Vector3 velocity;
 
@@ -37,7 +38,11 @@ public class ThirdPersonCamera : MonoBehaviour
 
         if (lookAtTarget)
         {
-            Quaternion desiredRotation = Quaternion.LookRotation((target.position + lookAtOffset) - transform.position);
+            // Match the player's own rotation directly instead of recomputing an angle
+            // from the (lagged) camera position - recomputing from position is what
+            // caused the slow left-drift feedback loop with camera-relative movement.
+            // Add a fixed downward tilt on top so the camera looks slightly down at the player.
+            Quaternion desiredRotation = target.rotation * Quaternion.Euler(pitchAngle, 0f, 0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSmoothSpeed * Time.deltaTime);
         }
     }

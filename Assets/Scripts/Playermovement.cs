@@ -29,8 +29,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        // Prevent the capsule from tipping over from physics collisions
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        // Rotation is fully handled by this script, so freeze all physics rotation
+        // (otherwise friction/contact torque can make the character slowly spin when idle)
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
         if (cameraTransform == null && Camera.main != null)
             cameraTransform = Camera.main.transform;
