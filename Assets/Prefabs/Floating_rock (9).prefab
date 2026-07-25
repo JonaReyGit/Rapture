@@ -10,55 +10,55 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 18.635399
+      value: 4.1503
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 23.959803
+      value: 5.3360996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 23.959799
+      value: 5.336099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -426.4912
+      value: -292.75754
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 63.81537
+      value: 33.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -138.74982
+      value: -130.79999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9640925
+      value: 0.8269177
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0014502405
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.26553088
+      value: 0.562323
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.004118489
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.286
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -30.796
+      value: 68.433
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.411
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14063e02f8ab99846a8b4298b8dcf5e2, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -97,5 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60615908bdacc2542a6de6084055aac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Oscillate
-  oscilationSpeed: 0
+  oscilationSpeed: 1
   oscillationRange: 3
+  delay: 0

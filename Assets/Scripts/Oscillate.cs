@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Oscillate : MonoBehaviour
 {
-    public int oscilationSpeed;
+    public int oscilationSpeed = 1;
     public int oscillationRange;
     public float delay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        oscilationSpeed = UnityEngine.Random.Range(-1, 1);
         oscillationRange = UnityEngine.Random.Range(3, 6);
-        delay = UnityEngine.Random.Range(2, 4);
+        delay = UnityEngine.Random.Range(3, 5);
         InvokeRepeating("Oscillation", 3, delay);
     }
 
