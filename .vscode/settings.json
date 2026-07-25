@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "RaptureGit.slnx"
+    "dotnet.defaultSolution": "Rapture.slnx"
 }
