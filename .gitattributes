@@ -149,3 +149,7 @@ Packages/packages-lock.json linguist-generated
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
 TerrainData_*.asset  binary
+#Merge
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+
