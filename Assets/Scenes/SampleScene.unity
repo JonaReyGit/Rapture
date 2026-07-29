@@ -1892,15 +1892,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5139386a175db84992ea54a601186f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonCamera
+  m_Script: {fileID: 11500000, guid: a40316b8c6ea472fb6dbe436103b4a65, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonCamera
   target: {fileID: 0}
-  offset: {x: 1, y: 8, z: -10}
-  followSmoothTime: 0.25
-  rotationSmoothSpeed: 7
-  lookAtTarget: 1
-  pitchAngle: 15
+  eyeOffset: {x: 0, y: 1.7, z: 0}
+  mouseSensitivity: 0.15
+  minPitch: -85
+  maxPitch: 85
+  lockCursor: 1
+  hidePlayerModel: 1
 --- !u!1001 &337699586
 PrefabInstance:
   m_ObjectHideFlags: 0

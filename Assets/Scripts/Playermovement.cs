@@ -15,9 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 0.3f;
     public LayerMask groundLayer;      // set this to whatever layer your Terrain is on
 
-    [Header("Camera")]
-    public Transform cameraTransform;  // drag Main Camera here, or leave empty to auto-find
-
     private Rigidbody rb;
     private Animator animator;
     private bool isGrounded;
@@ -29,12 +26,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        // Rotation is fully handled by this script, so freeze all physics rotation
-        // (otherwise friction/contact torque can make the character slowly spin when idle)
+        // Yaw is driven by the first-person camera's mouse look (see FirstPersonCamera),
+        // so freeze all physics rotation here too - it just prevents unwanted rigidbody spin.
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-
-        if (cameraTransform == null && Camera.main != null)
-            cameraTransform = Camera.main.transform;
     }
 
     void Update()
@@ -60,15 +54,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputDir.magnitude >= 0.1f)
         {
-            // Make movement relative to the camera's facing direction
-            float targetAngle = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg;
-            if (cameraTransform != null)
-                targetAngle += cameraTransform.eulerAngles.y;
-
-            Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-
-            moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            // First-person controls: the body's facing (yaw) is driven by mouse look, so
+            // movement is just relative to the player's own forward/right (WASD strafes),
+            // instead of rotating the body to face whatever direction was pressed.
+            moveDirection = (transform.right * inputDir.x + transform.forward * inputDir.z).normalized;
         }
         else
         {
