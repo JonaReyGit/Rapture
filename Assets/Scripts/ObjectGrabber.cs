@@ -31,6 +31,14 @@ public class ObjectGrabber : MonoBehaviour
 
     void Update()
     {
+        // Don't grab/throw through the menu - clicking a button would otherwise also fire
+        // a raycast into the world behind it.
+        if (TitleScreen.GameplayBlocked)
+        {
+            if (grabbedBody != null) Release(throwForce: false);
+            return;
+        }
+
         if (Mouse.current == null) return;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)

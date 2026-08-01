@@ -39,7 +39,9 @@ public class FirstPersonCamera : MonoBehaviour
         if (target != null)
             yaw = target.eulerAngles.y;
 
-        if (lockCursor)
+        // Don't grab the cursor out from under the title screen if it's up at startup -
+        // TitleScreen locks the cursor itself once the player hits Play.
+        if (lockCursor && !TitleScreen.GameplayBlocked)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -54,13 +56,10 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Update()
     {
-        // Let the player free the cursor without leaving play mode
-        if (lockCursor && Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            bool nowLocked = Cursor.lockState != CursorLockMode.Locked;
-            Cursor.lockState = nowLocked ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !nowLocked;
-        }
+        // Escape is owned by TitleScreen now (it opens the pause menu, which frees the
+        // cursor for you) - two scripts both toggling the cursor on the same key fought
+        // each other.
+        if (TitleScreen.GameplayBlocked) return;
 
         if (target == null || Mouse.current == null || Cursor.lockState != CursorLockMode.Locked)
             return;

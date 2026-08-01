@@ -33,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Menu/pause screen is up: stop moving and stop reading input.
+        if (TitleScreen.GameplayBlocked)
+        {
+            moveDirection = Vector3.zero;
+            if (animator != null) animator.SetFloat("Speed", 0f);
+            return;
+        }
+
         // --- Ground check ---
         if (groundCheck != null)
             isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
@@ -84,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        // While swinging on the grappling hook, the SpringJoint owns velocity - stomping it
+        // with our own movement every physics step would cancel the swing outright.
+        if (GrapplingHookGun.Instance != null && GrapplingHookGun.Instance.IsSwinging) return;
+
         float speed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
         Vector3 velocity = moveDirection * speed;
         velocity.y = rb.linearVelocity.y; // preserve gravity/jump vertical velocity

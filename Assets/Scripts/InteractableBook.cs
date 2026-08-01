@@ -59,6 +59,7 @@ public class InteractableButton : MonoBehaviour
 
     void Update()
     {
+        if (TitleScreen.GameplayBlocked) return;
         if (!playerInRange) return;
         if (blockWhilePlaying && NarratorController.Instance != null && NarratorController.Instance.IsPlaying) return;
 
