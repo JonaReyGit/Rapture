@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+
         // --- Ground check ---
         if (groundCheck != null)
             isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
