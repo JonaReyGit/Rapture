@@ -1957,27 +1957,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.004492671
+      value: 0.0033449733
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.004492672
+      value: 0.003344974
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0044926717
+      value: 0.0033449738
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2028
+      value: 0.16876
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0829
+      value: 0.0631
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6426
+      value: 0.6435
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: eef4db0dc8bb1304ba55cb5af3597c82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39181,8 +39181,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42.943615, y: 73.774315, z: 35.703823}
-  m_Center: {x: -22.707235, y: 32.537117, z: 17.351923}
+  m_Size: {x: 42.94362, y: 75.24563, z: 35.703823}
+  m_Center: {x: -22.706285, y: 31.802286, z: 17.351906}
 --- !u!82 &1616656118
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45792,8 +45792,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.07407612, y: 0.07717248, z: 0.039035752}
+  m_Center: {x: -0.016662575, y: 0.030848917, z: -0.0016349343}
 --- !u!1001 &1926948620
 PrefabInstance:
   m_ObjectHideFlags: 0
