@@ -7,7 +7,7 @@ public class PlayPiano : MonoBehaviour
     AudioSource audioSource;
     private float currentPosition = 0f;
     private Coroutine playRoutine;
-    private float interactableDistance = 300;
+    private float interactableDistance = 30;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
